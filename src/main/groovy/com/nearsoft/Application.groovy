@@ -1,7 +1,8 @@
-package com.nearsoft.conf
+package com.nearsoft
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.context.ApplicationContext
 
 /**
  * This is the main class of the project
@@ -11,6 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 class Application {
 
     def static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        ApplicationContext ctx = SpringApplication.run(Application.class, args);
     }
+
+
+
+
 }
