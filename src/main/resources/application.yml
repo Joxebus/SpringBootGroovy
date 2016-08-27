@@ -1,0 +1,5 @@
+server:
+  context-path: /test
+
+logging:
+  config: classpath:log-config.xml
