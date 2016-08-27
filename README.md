@@ -7,6 +7,19 @@
 - Tomcat 7.0.59
 - Java 8
 
+## Groovy Sources
+
+First of all the project must to know were to find the `sources` for this we need to add the next line to our *pom.xml* file:
+
+```xml
+<build>
+    <sourceDirectory>src/main/groovy</sourceDirectory>
+    <!-- Some other configurations -->
+</build>
+```
+
+To see a full example in this project please click [here.](https://raw.githubusercontent.com/Joxebus/SpringBootGroovy/master/pom.xml)
+
 ##Spring Boot Groovy Example App
 
 This app is an example of how to build a Spring Boot Application with Groovy in this case we manage the depencies of the project with maven but can do it also with gradle, in a future I will gonna create a branch with a gradle configuration.
