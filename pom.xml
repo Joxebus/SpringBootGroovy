@@ -12,7 +12,8 @@
         <tomcat.version>7.0.59</tomcat.version>
         <groovy.version>2.3.11</groovy.version>
         <springboot.version>1.3.3.RELEASE</springboot.version>
-        <start-class>com.skytouch.Application</start-class>
+        <src.dir>src/main/groovy</src.dir>
+        <start-class>com.nearsoft.conf.Application</start-class>
     </properties>
 
 
@@ -42,5 +43,21 @@
         </dependency>       
     </dependencies>
 
-    
+
+
+    <build>
+
+        <sourceDirectory>${src.dir}</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${springboot.version}</version>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
