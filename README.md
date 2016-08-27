@@ -63,6 +63,24 @@ By *default* a Spring Boot Application will gonna look for an `application.prope
 
 You can find more common Application Properties [here.](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
 
+## Logging
+
+To enable logging into your class use the next annotation `@Slf4j` in your class, this will inject the object `log` and you can use is as below:
+
+```java
+@RestController
+@Slf4j
+class HelloController {
+
+    @PostConstruct
+    def init(){
+        log.info 'Controller generated' // You can use log.{ info | debug | error | warn }
+    }
+
+    // Other methods
+}
+``` 
+
 
 ### Run your project
 
