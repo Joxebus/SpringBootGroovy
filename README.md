@@ -6,6 +6,7 @@
 - Groovy 2.3.11
 - Tomcat 7.0.59
 - Java 8
+- Thymeleaf 
 
 ## Groovy Sources
 
@@ -32,10 +33,10 @@ The package `com.nearsoft` is the main package of this application, in here a fi
 
 I decide to create a package named `com.nearsoft.controller` in here I will gonna put all my available controllers for this example.
 
-To configure other controllers you can use the annotation `@RestController` in a class level, just like this:
+To configure other controllers you can use the annotation `@RestController` or `@Controller` in a class level, just like this:
 
 ``` java
-@RestController
+@RestController // Change for @Controller if you are using thymeleaf to serve the views
 class HelloController {
 	// Logic
 }
@@ -43,7 +44,7 @@ class HelloController {
 
 ## RequestMappings
 
-To configure the URLs that will be available for your application, we use the `@RequestMapping`annotation you can define also if the request method will be GET, POST, PUT or DELETE and also if consumes XML, JSON or another configuration and the same for the response.
+To configure the URLs that will be available for your application, we use the `@RequestMapping` annotation you can define also if the request method will be GET, POST, PUT or DELETE and also if consumes XML, JSON or another configuration and the same for the response.
 
 ```java
 @RequestMapping(value = "/",
@@ -81,6 +82,41 @@ class HelloController {
 }
 ``` 
 
+## Rendering a view
+
+To render a view you only need to create a class with `@Controller` annotation to make this class a Spring component and a Spring MVC controller, for example if you want to show the view `index.html` you just need to follow the convention, returning the name of the template less the extension of the file placed in the _templates_ folder, follow the next example:
+
+
+### Index Controller
+```java
+
+@Controller
+class IndexController {
+
+    @RequestMapping("/")
+    def index(Model model){
+        log.info 'Calling index method'
+        model.addAttribute('greeting', 'Hello World!')
+        'index'	 // This will be look for a matching template named index.html
+    }
+}
+```
+
+### Index View
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Hello Spring Boot!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1 th:text="${greeting}"></h1>
+</body>
+</html>
+```
+
+**Note:** Don't forget to include the namespace in the root tag `<html xmlns:th="http://www.thymeleaf.org">`
 
 ### Run your project
 
@@ -91,7 +127,7 @@ mvn spring-boot:run
 ### See the results
 
 ```
-http://localhost:8080
+http://localhost:8080/test
 ```
 
 If everything goes well you will see on your web browser the message bellow:
