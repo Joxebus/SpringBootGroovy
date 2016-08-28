@@ -16,6 +16,12 @@ class IndexController {
         log.info 'Controller generated'
     }
 
+    /**
+     * This method return a String, by convention is the name
+     * of the template less the extension
+     * @param model the model returned to the view
+     * @return index view placed at templates folder
+     */
     @RequestMapping("/")
     def index(Model model){
         log.info 'Calling index method'
