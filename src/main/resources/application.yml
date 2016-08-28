@@ -6,3 +6,8 @@ server:
 
 logging:
   config: classpath:log-config.xml
+
+# This value is inyected for an example
+index:
+  view.text:
+    greeting: Hello World!
