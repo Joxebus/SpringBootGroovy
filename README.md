@@ -124,6 +124,12 @@ class IndexController {
 mvn spring-boot:run
 ```
 
+### Access H2 database
+
+```
+http://localhost:8080/test/console
+```
+
 ### See the results
 
 ```
@@ -133,3 +139,13 @@ http://localhost:8080/test
 If everything goes well you will see on your web browser the message bellow:
 
 # Hello World!
+
+
+
+--------
+### Related Links
+- Fátima Casaú *InfoQ*: [Spring Boot and Groovy](https://www.infoq.com/presentations/spring-groovy-gorm)
+- Dan Vega *Article*: [Using GORM in Spring Boot](http://therealdanvega.com/blog/2015/11/25/using-gorm-in-spring-boot)
+- GORM 5: [Official Site](http://gorm.grails.org/latest/)
+- H2 Spring Boot Configuration: [Spring IO - Official Site](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-sql-h2-console)
+- Application Properties: [Spring IO - Official Site](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
