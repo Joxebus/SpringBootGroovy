@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Person list</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            <tr th:each="person : ${personList}">
+                <td th:text="${person.name}">Name</td>
+                <td th:text="${person.lastName}">Last name</td>
+                <td th:text="${person.email}">Email</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <ul>
+            <li><a href="../index.html" th:href="@{/}">Return to home</a></li>
+            <li><a href="#" th:href="@{/person/api}">List as JSON</a></li>
+        </ul>
+    </p>
+
+</body>
+</html>

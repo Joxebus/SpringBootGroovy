@@ -1,5 +1,10 @@
 spring:
   thymeleaf.cache: false
+  # H2 autoconfiguration database url jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+  h2:
+    console:
+      enabled: true
+      path: /console
 
 server:
   context-path: /test
