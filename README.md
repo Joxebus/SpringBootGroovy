@@ -3,7 +3,7 @@
 ## Technologies
 
 - Spring Boot 1.4.0.RELEASE
-- Groovy 2.3.11
+- GORM 5.0.10.RELEASE
 - Tomcat 7.0.59
 - Java 8
 - Thymeleaf 
