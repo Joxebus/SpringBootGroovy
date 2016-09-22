@@ -10,7 +10,7 @@
 
 ## Groovy Sources
 
-First of all the project must to know were to find the `sources` for this we need to add the next line to our *pom.xml* file:
+First of all the project must to know where to find the `sources` for this we need to add the next line to our *pom.xml* file:
 
 ```xml
 <build>
@@ -31,9 +31,11 @@ The package `com.nearsoft` is the main package of this application, in here a fi
 
 ## Controllers
 
-I decide to create a package named `com.nearsoft.controller` in here I will gonna put all my available controllers for this example.
+I decide to create a package named `com.nearsoft.controller` to put all my available controllers for this example.
 
 To configure other controllers you can use the annotation `@RestController` or `@Controller` in a class level, just like this:
+
+*Note:* "`@RestController` combines `@Controller` and `@ResponseBody`, two annotations that results in web requests returning data rather than a view." For more info please go [here.](https://spring.io/guides/gs/spring-boot/#_create_a_simple_web_application)
 
 ``` java
 @RestController // Change for @Controller if you are using thymeleaf to serve the views
