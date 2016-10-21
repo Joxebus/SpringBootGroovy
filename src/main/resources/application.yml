@@ -11,3 +11,5 @@ logging:
 index:
   view.text:
     greeting: Hello World!
+
+spring.datasource.url: jdbc:h2:data_files
