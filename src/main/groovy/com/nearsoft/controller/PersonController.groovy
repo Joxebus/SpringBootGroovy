@@ -32,6 +32,12 @@ class PersonController {
         'person/list'
     }
 
+    @RequestMapping("/new")
+    def create(Model model){
+        log.info 'Calling create method'
+        'person/create'
+    }
+
     // API Rest
 
     @RequestMapping(value='/api',
@@ -75,13 +81,20 @@ class PersonController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody ResponseEntity<?> restDeletePerson(@PathVariable Long id){
         log.info "Delete person with id: $id"
+        HttpStatus status = null;
         try{
-            personService.delete(id)
-            new ResponseEntity<String>(HttpStatus.OK);
+            if(personService.delete(id)){
+                log.debug("SUCCESS")
+                status = HttpStatus.OK
+            }else{
+                log.error("ERROR")
+                status = HttpStatus.UNPROCESSABLE_ENTITY
+            }
+
         }catch(Error e){
             log.error(e.getMessage())
-            new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+            status =HttpStatus.BAD_REQUEST
         }
-
+        return new ResponseEntity<String>(status)
     }
 }
