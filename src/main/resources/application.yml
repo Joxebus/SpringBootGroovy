@@ -2,7 +2,8 @@ spring:
   thymeleaf.cache: false
 
 server:
-  context-path: /test
+  servlet:
+    context-path: /test
 
 logging:
   config: classpath:log-config.xml

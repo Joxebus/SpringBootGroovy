@@ -8,21 +8,18 @@
     <artifactId>spring-boot-groovy</artifactId>
     <version>0.1-SNAPSHOT</version>
 
-    <properties>
-        <tomcat.version>7.0.59</tomcat.version>
-        <groovy.version>2.3.11</groovy.version>
-        <slf4j.version>1.7.15</slf4j.version>
-        <logback.version>1.1.7</logback.version>
-        <gorm.version>5.0.10.RELEASE</gorm.version>
-        <src.dir>src/main/groovy</src.dir>
-        <start-class>com.nearsoft.conf.Application</start-class>
-    </properties>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.6.RELEASE</version>
     </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <groovy.version>2.3.11</groovy.version>
+        <slf4j.version>1.7.15</slf4j.version>
+        <logback.version>1.1.7</logback.version>
+    </properties>
 
 
     <dependencies>
@@ -36,6 +33,12 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!-- Thymeleaf templates -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,7 +50,6 @@
             <artifactId>groovy-all</artifactId>
             <version>${groovy.version}</version>
         </dependency>
-
 
         <!-- Logging dependencies -->
         <dependency>
@@ -65,17 +67,10 @@
 
 
     <build>
-
-        <sourceDirectory>${src.dir}</sourceDirectory>
-
-        <plugins>
+       <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
-                <configuration>
-                    <mainClass>${start-class}</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
