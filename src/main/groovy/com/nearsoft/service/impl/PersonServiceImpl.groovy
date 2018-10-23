@@ -2,8 +2,8 @@ package com.nearsoft.service.impl
 
 import com.nearsoft.domain.Person
 import com.nearsoft.service.PersonService
+import grails.gorm.transactions.Transactional
 import org.springframework.stereotype.Service
-import org.springframework.transaction.annotation.Transactional
 
 @Service
 @Transactional

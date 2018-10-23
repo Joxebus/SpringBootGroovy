@@ -5,6 +5,9 @@
     <title>Person list</title>
 </head>
 <body>
+    <p th:if="${message}">
+        <span th:text="${message}"></span>
+    </p>
     <table>
         <thead>
             <th>Name</th>
@@ -23,6 +26,7 @@
     <p>
         <ul>
             <li><a href="../index.html" th:href="@{/}">Return to home</a></li>
+            <li><a href="#" th:href="@{/person/new}">Create Person</a></li>
             <li><a href="#" th:href="@{/person/api}">List as JSON</a></li>
         </ul>
     </p>

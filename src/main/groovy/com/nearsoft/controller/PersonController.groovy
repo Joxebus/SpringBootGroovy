@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
 @Controller
 @RequestMapping('/person')
@@ -24,32 +25,38 @@ class PersonController {
      * @param model contains the info to render
      * @return view
      */
-    @RequestMapping(value='/',
-            method = RequestMethod.GET)
+    @GetMapping(value='/')
     def list(Model model){
         List<Person> personList = personService.findAll()
         model.addAttribute('personList', personList)
         'person/list'
     }
 
-    @RequestMapping("/new")
-    def create(Model model){
+    @GetMapping("/new")
+    def newPerson(Model model){
         log.info 'Calling create method'
+        model.addAttribute("person", new Person())
         'person/create'
+    }
+
+    @PostMapping("/create")
+    def createPerson(@ModelAttribute Person person, RedirectAttributes redirAttrs){
+        log.info 'Calling create method'
+        personService.save(person)
+        redirAttrs.addFlashAttribute("message", "Successfuly added ${person.name}")
+        'redirect:/person/'
     }
 
     // API Rest
 
-    @RequestMapping(value='/api',
-            method = RequestMethod.GET,
+    @GetMapping(value='/api',
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody List<Person> restList(){
         log.info "Get list of persons as JSON"
         personService.findAll()
     }
 
-    @RequestMapping(value='/api',
-            method = RequestMethod.POST,
+    @PostMapping(value='/api',
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody Person restSave(@RequestBody Person person){
@@ -57,8 +64,7 @@ class PersonController {
         personService.save(person)
     }
 
-    @RequestMapping(value='/api',
-            method = RequestMethod.PUT,
+    @PutMapping(value='/api',
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody Person restUpdate(@RequestBody Person person){
@@ -66,8 +72,7 @@ class PersonController {
         personService.save(person)
     }
 
-    @RequestMapping(value='/api/{id}',
-            method = RequestMethod.GET,
+    @GetMapping(value='/api/{id}',
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody Person restGetPerson(@PathVariable Long id){
@@ -75,8 +80,7 @@ class PersonController {
         personService.findById(id)
     }
 
-    @RequestMapping(value='/api/{id}',
-            method = RequestMethod.DELETE,
+    @DeleteMapping(value='/api/{id}',
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody ResponseEntity<?> restDeletePerson(@PathVariable Long id){

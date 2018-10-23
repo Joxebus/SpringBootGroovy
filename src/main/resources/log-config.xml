@@ -6,6 +6,10 @@
         </encoder>
     </appender>
     <logger name="org.springframework">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.hibernate">
         <level value="info" />
     </logger>
 

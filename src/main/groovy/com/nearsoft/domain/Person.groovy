@@ -1,7 +1,8 @@
 package com.nearsoft.domain
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import grails.persistence.Entity
+import grails.gorm.annotation.Entity
+
 
 @Entity
 @JsonIgnoreProperties(["errors","attached", "dirtyPropertyNames", "dirty"])
