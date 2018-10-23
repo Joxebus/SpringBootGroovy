@@ -2,9 +2,10 @@
 
 ## Technologies
 
-- Spring Boot 1.4.0.RELEASE
-- GORM 5.0.10.RELEASE
-- Tomcat 7.0.59
+- Spring Boot Parent POM 1.5.11.RELEASE
+- GORM 6.1.9.RELEASE
+- Hibernate Core / Ecache 5.1.0.Final
+- Tomcat JDBC 8.5.0
 - Java 8
 - Thymeleaf 
 
@@ -149,3 +150,4 @@ If everything goes well you will see on your web browser the message bellow:
 - GORM 5: [Official Site](http://gorm.grails.org/latest/)
 - H2 Spring Boot Configuration: [Spring IO - Official Site](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-sql-h2-console)
 - Application Properties: [Spring IO - Official Site](http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
+- Handling Form Submission with Thymeleaf: [Spring IO - Official Site Examples](https://spring.io/guides/gs/handling-form-submission/)

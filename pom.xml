@@ -8,33 +8,28 @@
     <artifactId>spring-boot-groovy</artifactId>
     <version>0.1-SNAPSHOT</version>
 
-    <properties>
-        <tomcat.version>7.0.59</tomcat.version>
-        <slf4j.version>1.7.15</slf4j.version>
-        <!-- This is the compatible version of hibernate for GORM -->
-        <!-- hibernate.version>4.3.11.Final</hibernate.version -->
-        <logback.version>1.1.7</logback.version>
-        <gorm.version>5.0.10.RELEASE</gorm.version>
-        <src.dir>src/main/groovy</src.dir>
-        <start-class>com.nearsoft.conf.Application</start-class>
-    </properties>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.RELEASE</version>
+        <version>1.5.11.RELEASE</version>
     </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <logback.version>1.1.7</logback.version>
+        <gorm.version>6.1.9.RELEASE</gorm.version>
+        <hibernate.version>5.1.0.Final</hibernate.version>
+        <tomcat-jdbc.version>8.5.0</tomcat-jdbc.version>
+        <src.dir>src/main/groovy</src.dir>
+        <start-class>com.nearsoft.Application</start-class>
+    </properties>
 
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- Thymeleaf templates -->
@@ -44,16 +39,14 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-juli</artifactId>
-            <version>${tomcat.version}</version>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
         </dependency>
 
         <!-- Logging dependencies -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>
@@ -65,8 +58,26 @@
         <!-- GORM dependencies -->
         <dependency>
             <groupId>org.grails</groupId>
-            <artifactId>gorm-hibernate4-spring-boot</artifactId>
+            <artifactId>gorm-hibernate5-spring-boot</artifactId>
             <version>${gorm.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>${tomcat-jdbc.version}</version>
         </dependency>
 
         <!-- Memory database -->
@@ -77,6 +88,7 @@
 
     </dependencies>
 
+
     <build>
 
         <sourceDirectory>${src.dir}</sourceDirectory>
@@ -85,10 +97,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${project.parent.version}</version>
-                <configuration>
-                    <mainClass>${start-class}</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
