@@ -2,10 +2,11 @@
 
 ## Technologies
 
-- Spring Boot 1.4.0.RELEASE
+- Spring Boot 2.0.6.RELEASE
 - Groovy 2.3.11
 - Tomcat 7.0.59
 - Java 8
+- Groovy 2.3.11
 - Thymeleaf 
 
 ## Groovy Sources
