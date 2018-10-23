@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
 @Controller
-@RequestMapping('/person')
+@RequestMapping('/people')
 @Slf4j
 class PersonController {
 
@@ -27,24 +27,30 @@ class PersonController {
      */
     @GetMapping(value='/')
     def list(Model model){
-        List<Person> personList = personService.findAll()
-        model.addAttribute('personList', personList)
+        List<Person> listOfPeople = personService.findAll()
+        model.addAttribute('listOfPeople', listOfPeople)
         'person/list'
     }
 
     @GetMapping("/new")
     def newPerson(Model model){
-        log.info 'Calling create method'
+        log.info 'Calling new method'
         model.addAttribute("person", new Person())
         'person/create'
     }
 
     @PostMapping("/create")
-    def createPerson(@ModelAttribute Person person, RedirectAttributes redirAttrs){
+    def createPerson(@ModelAttribute Person person, Model model, RedirectAttributes redirAttrs){
         log.info 'Calling create method'
-        personService.save(person)
-        redirAttrs.addFlashAttribute("message", "Successfuly added ${person.name}")
-        'redirect:/person/'
+        try{
+            personService.save(person)
+            redirAttrs.addFlashAttribute("message", "Successfuly added ${person.name}")
+            return 'redirect:/people/'
+        } catch(Exception e) {
+            model.addAttribute("person", person)
+            model.addAttribute("error", "Verify your information")
+            return 'person/create'
+        }
     }
 
     // API Rest

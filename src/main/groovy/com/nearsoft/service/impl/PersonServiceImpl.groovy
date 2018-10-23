@@ -21,6 +21,10 @@ class PersonServiceImpl implements PersonService {
 
     @Override
     Person save(Person person) {
+        person.validate()
+        if(person.hasErrors()){
+            throw new Exception("Person fields are incorrect.")
+        }
         person.save(flush:true)
     }
 

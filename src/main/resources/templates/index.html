@@ -3,11 +3,51 @@
 <head lang="en">
     <title>Hello Spring Boot!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
     <h1 th:text="${greeting}"></h1>
-    <p>
-        <a href="person/list.html" th:href="@{/person/}">Person list</a>
+
+    <p>This project is an example of how to get running Spring Boot with
+        some nice technologies together.
     </p>
+
+    <h3>Groovy</h3>
+    <p>
+        Apache Groovy is a powerful, optionally typed and dynamic language, with
+        static-typing and static compilation capabilities, for the Java platform
+        aimed at improving developer productivity thanks to a concise, familiar
+        and easy to learn syntax. It integrates smoothly with any Java program,
+        and immediately delivers to your application powerful features, including
+        scripting capabilities, Domain-Specific Language authoring, runtime and
+        compile-time meta-programming and functional programming.
+    </p>
+
+    <h3>GORM</h3>
+    <p>
+        GORM is the data access toolkit used by Grails and provides a rich set of APIs
+        for accessing relational and non-relational data including implementations
+        for Hibernate (SQL), MongoDB, Neo4j, Cassandra, an in-memory
+        ConcurrentHashMap for testing and an automatic GraphQL schema generator
+    </p>
+
+    <h3>Thymeleaf</h3>
+    <p>
+        Thymeleaf is a modern server-side Java template engine for both web and standalone environments.
+    </p>
+    <p>
+        Thymeleaf's main goal is to bring elegant natural templates to your development workflow — HTML that can be correctly displayed in browsers and also work as static prototypes, allowing for stronger collaboration in development teams.
+    </p>
+    <p>
+        With modules for Spring Framework, a host of integrations with your favourite tools, and the ability to plug in your own functionality, Thymeleaf is ideal for modern-day HTML5 JVM web development — although there is much more it can do.
+    </p>
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

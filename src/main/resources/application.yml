@@ -25,4 +25,4 @@ logging:
 # This value is inyected for an example
 index:
   view.text:
-    greeting: Hello World!
+    greeting: Spring Boot + Groovy + GORM + Thymeleaf

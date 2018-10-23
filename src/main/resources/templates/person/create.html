@@ -3,15 +3,39 @@
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Person Create</title>
+    <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
 
-<form action="#" th:action="@{/person/create}" th:object="${person}" method="post">
-    <p>Name: <input type="text" th:field="*{name}" /></p>
-    <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
-    <p>Email: <input type="email" th:field="*{email}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
+<div th:replace="fragments/header :: header"/>
 
+<div class="container">
+
+    <h2>Add new person</h2>
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" th:if="${error}">
+        <span th:text="${error}"/>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <form action="#" th:action="@{/people/create}" th:object="${person}" method="post">
+        <div class="form-group">
+            <label for="fieldName">Name</label>
+            <input type="text" th:field="*{name}" class="form-control" id="fieldName" placeholder="Name"/>
+            <label for="fieldLastName">Last Name</label>
+            <input type="text" th:field="*{lastName}" class="form-control" id="fieldLastName" placeholder="Last name"/>
+            <label for="fieldEmail">Email</label>
+            <input type="email" th:field="*{email}" class="form-control" id="fieldEmail" placeholder="email@email.com"/>
+            <br/>
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+            <input type="reset" value="Reset" class="btn btn-default"/>
+        </div>
+    </form>
+</div>
+
+<!-- Container -->
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

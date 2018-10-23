@@ -20,6 +20,7 @@
         <gorm.version>6.1.9.RELEASE</gorm.version>
         <hibernate.version>5.1.0.Final</hibernate.version>
         <tomcat-jdbc.version>8.5.0</tomcat-jdbc.version>
+        <bootstrap-webjars.version>4.1.3</bootstrap-webjars.version>
         <src.dir>src/main/groovy</src.dir>
         <start-class>com.nearsoft.Application</start-class>
     </properties>
@@ -36,6 +37,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${bootstrap-webjars.version}</version>
         </dependency>
 
         <dependency>

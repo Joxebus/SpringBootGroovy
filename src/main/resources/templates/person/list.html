@@ -3,19 +3,33 @@
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Person list</title>
+    <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
-    <p th:if="${message}">
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert" th:if="${message}">
         <span th:text="${message}"></span>
-    </p>
-    <table>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <h2>People registered</h2>
+    <p><a th:href="@{/people/api}"> View as json</a></p>
+    <table class="table">
         <thead>
-            <th>Name</th>
-            <th>Last name</th>
-            <th>Email</th>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+            </tr>
         </thead>
         <tbody>
-            <tr th:each="person : ${personList}">
+            <tr th:each="person : ${listOfPeople}">
                 <td th:text="${person.name}">Name</td>
                 <td th:text="${person.lastName}">Last name</td>
                 <td th:text="${person.email}">Email</td>
@@ -23,13 +37,11 @@
         </tbody>
     </table>
 
-    <p>
-        <ul>
-            <li><a href="../index.html" th:href="@{/}">Return to home</a></li>
-            <li><a href="#" th:href="@{/person/new}">Create Person</a></li>
-            <li><a href="#" th:href="@{/person/api}">List as JSON</a></li>
-        </ul>
-    </p>
+
+</div>
+
+<!-- Container -->
+<div th:replace="fragments/footer :: footer"/>
 
 </body>
 </html>
