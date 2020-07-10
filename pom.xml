@@ -17,8 +17,8 @@
     <properties>
         <java.version>1.8</java.version>
         <logback.version>1.1.7</logback.version>
-        <gorm.version>6.1.9.RELEASE</gorm.version>
-        <hibernate.version>5.1.0.Final</hibernate.version>
+        <gorm.version>7.0.3.RELEASE</gorm.version>
+        <hibernate.version>5.4.18.Final</hibernate.version>
         <tomcat-jdbc.version>8.5.0</tomcat-jdbc.version>
         <src.dir>src/main/groovy</src.dir>
         <start-class>io.github.joxebus.Application</start-class>
@@ -30,6 +30,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- Thymeleaf templates -->
