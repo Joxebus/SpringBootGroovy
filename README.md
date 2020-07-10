@@ -2,7 +2,8 @@
 
 ## Technologies
 
-- Spring Boot Parent POM 1.5.11.RELEASE
+- Spring Boot Parent POM 2.3.1.RELEASE
+- Groovy 2.5.12
 - GORM 6.1.9.RELEASE
 - Hibernate Core / Ecache 5.1.0.Final
 - Tomcat JDBC 8.5.0
@@ -32,7 +33,7 @@ The package `com.nearsoft` is the main package of this application, in here a fi
 
 ## Controllers
 
-I decide to create a package named `com.nearsoft.controller` in here I will gonna put all my available controllers for this example.
+I decide to create a package named `io.github.joxebus.controller` in here I will gonna put all my available controllers for this example.
 
 To configure other controllers you can use the annotation `@RestController` or `@Controller` in a class level, just like this:
 
@@ -122,7 +123,7 @@ class IndexController {
 ### Run your project
 
 ```
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ### Access H2 database
