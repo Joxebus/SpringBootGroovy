@@ -1,8 +1,9 @@
-package com.nearsoft.service.impl
+package io.github.joxebus.service.impl
 
-import com.nearsoft.domain.Person
-import com.nearsoft.service.PersonService
+
 import grails.gorm.transactions.Transactional
+import io.github.joxebus.domain.Person
+import io.github.joxebus.service.PersonService
 import org.springframework.stereotype.Service
 
 @Service

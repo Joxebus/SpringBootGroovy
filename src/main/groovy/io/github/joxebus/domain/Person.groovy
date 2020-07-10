@@ -1,4 +1,4 @@
-package com.nearsoft.domain
+package io.github.joxebus.domain
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import grails.gorm.annotation.Entity
