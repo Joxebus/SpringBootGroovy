@@ -2,11 +2,9 @@
 
 ## Technologies
 
-- Spring Boot 2.0.6.RELEASE
-- Groovy 2.3.11
-- Tomcat 7.0.59
+- Spring Boot 2.3.1.RELEASE
+- Groovy 2.5.12
 - Java 8
-- Groovy 2.3.11
 - Thymeleaf 
 
 ## Groovy Sources
@@ -124,7 +122,7 @@ class IndexController {
 ### Run your project
 
 ```
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 ### See the results
