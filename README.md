@@ -26,11 +26,11 @@ This app is an example of how to build a Spring Boot Application with Groovy in 
 
 ## The Application Class
 
-The package `com.nearsoft` is the main package of this application, in here a file named `Application.groovy` is placed, this is the entry point for our Spring Boot Application.
+The package `io.github.joxebus` is the main package of this application, in here a file named `Application.groovy` is placed, this is the entry point for our Spring Boot Application.
 
 ## Controllers
 
-I decide to create a package named `com.nearsoft.controller` to put all my available controllers for this example.
+I decide to create a package named `io.github.joxebus.controller` to put all my available controllers for this example.
 
 To configure other controllers you can use the annotation `@RestController` or `@Controller` in a class level, just like this:
 

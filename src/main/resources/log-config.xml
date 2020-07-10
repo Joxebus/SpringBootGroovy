@@ -9,7 +9,7 @@
         <level value="info" />
     </logger>
 
-    <logger name="com.nearsoft.controller">
+    <logger name="io.github.joxebus.controller">
         <level value="debug" />
     </logger>
 
