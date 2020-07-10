@@ -5,16 +5,17 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password: ''
-    url: jdbc:h2:file:~/spring-boot-groovy
+    url: jdbc:h2:file:~/spring-boot-groovy #jdbc:h2:mem:testdb
   h2:
     console:
       enabled: true
       path: /console
 
-# To use gorm you need this configuration at this level
+# To use GORM you need this configuration at this level
 hibernate:
   hbm2ddl:
     auto: create-drop # update
+  dialect: org.hibernate.dialect.H2Dialect
 
 server:
   context-path: /test

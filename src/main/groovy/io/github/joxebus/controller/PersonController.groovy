@@ -80,7 +80,6 @@ class PersonController {
     }
 
     @GetMapping(value='/api/{id}',
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     def @ResponseBody Person restGetPerson(@PathVariable Long id){
         log.info "Get person with id: $id"
