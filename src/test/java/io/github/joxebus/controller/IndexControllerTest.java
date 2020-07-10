@@ -1,4 +1,4 @@
-package com.nearsoft.controller;
+package io.github.joxebus.controller;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
