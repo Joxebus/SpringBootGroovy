@@ -1,4 +1,4 @@
-package com.nearsoft
+package io.github.joxebus
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

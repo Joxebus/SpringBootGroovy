@@ -1,4 +1,4 @@
-package com.nearsoft.controller
+package io.github.joxebus.controller
 
 import groovy.util.logging.Slf4j
 import org.springframework.beans.factory.annotation.Value

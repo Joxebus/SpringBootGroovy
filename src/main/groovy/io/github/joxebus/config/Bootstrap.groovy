@@ -1,9 +1,10 @@
-package com.nearsoft.config
+package io.github.joxebus.config
 
-import com.nearsoft.domain.Person
-import com.nearsoft.service.PersonService
+
+import io.github.joxebus.service.PersonService
 import grails.gorm.transactions.Transactional
 import groovy.util.logging.Slf4j
+import io.github.joxebus.domain.Person
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.ApplicationContext

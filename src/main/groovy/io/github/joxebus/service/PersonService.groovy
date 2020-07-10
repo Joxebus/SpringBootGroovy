@@ -1,6 +1,7 @@
-package com.nearsoft.service
+package io.github.joxebus.service
 
-import com.nearsoft.domain.Person
+
+import io.github.joxebus.domain.Person
 
 
 interface PersonService {
