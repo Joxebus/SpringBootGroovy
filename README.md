@@ -4,8 +4,8 @@
 
 - Spring Boot Parent POM 2.3.1.RELEASE
 - Groovy 2.5.12
-- GORM 6.1.9.RELEASE
-- Hibernate Core / Ecache 5.1.0.Final
+- GORM 7.0.3.RELEASE
+- Hibernate Core / Ecache 5.4.18.Final
 - Tomcat JDBC 8.5.0
 - Java 8
 - Thymeleaf 
@@ -29,7 +29,7 @@ This app is an example of how to build a Spring Boot Application with Groovy in 
 
 ## The Application Class
 
-The package `com.nearsoft` is the main package of this application, in here a file named `Application.groovy` is placed, this is the entry point for our Spring Boot Application.
+The package `io.github.joxebus` is the main package of this application, in here a file named `Application.groovy` is placed, this is the entry point for our Spring Boot Application.
 
 ## Controllers
 
