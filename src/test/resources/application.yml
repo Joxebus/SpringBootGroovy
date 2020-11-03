@@ -1,0 +1,29 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+      path: /console
+
+# To use GORM you need this configuration at this level
+hibernate:
+  hbm2ddl:
+    auto: create-drop # update
+  dialect: org.hibernate.dialect.H2Dialect
+
+server:
+  context-path: /test
+
+logging:
+  config: classpath:log-config.xml
+
+# This value is inyected for an example
+index:
+  view.text:
+    greeting: Spring Boot + Groovy + GORM + Thymeleaf
